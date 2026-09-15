@@ -24,6 +24,14 @@
 
 
     /* =====================================================
+       FACEBOOK / MESSENGER
+       ===================================================== */
+
+    const facebookProfile =
+        "https://www.facebook.com/rogeriii.lagasca/";
+
+
+    /* =====================================================
        SECTION MAP
        ===================================================== */
 
@@ -140,6 +148,14 @@
                         type="button">
                         Explore Freely
                     </button>
+
+                    <a
+                        class="dr-button messenger-button"
+                        href="${facebookProfile}"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        💬 Chat with Roger
+                    </a>
 
                 </div>
 
@@ -347,6 +363,16 @@
 
                 </button>
 
+                <a
+                    class="dr-button messenger-button"
+                    href="${facebookProfile}"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    💬 Chat with Roger
+
+                </a>
+
             `;
 
 
@@ -399,6 +425,16 @@
                     Take the Tour
 
                 </button>
+
+                <a
+                    class="dr-button messenger-button"
+                    href="${facebookProfile}"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    💬 Chat with Roger
+
+                </a>
 
             `;
 
