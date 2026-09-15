@@ -468,3 +468,14 @@
         animation: none;
     }
 }
+.messenger-button {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.messenger-button:hover {
+    text-decoration: none;
+}
