@@ -6,20 +6,27 @@
 
   <title>Roger Lagasca III | Executive Virtual Assistant</title>
 
-  <meta name="description" content="Roger Lagasca III — Executive Virtual Assistant specializing in operations, CRM management, administrative support, customer success, and workflow organization.">
+  <meta
+    name="description"
+    content="Roger Lagasca III — Executive Virtual Assistant specializing in operations, CRM management, administrative support, customer success, and organized business workflows."
+  >
 
   <style>
     :root {
-      --blue: #1769e0;
-      --blue-dark: #0d47a1;
-      --blue-light: #eaf2ff;
-      --navy: #0f172a;
-      --text: #1e293b;
-      --muted: #64748b;
-      --border: #e2e8f0;
-      --bg: #f8fafc;
-      --white: #ffffff;
-      --shadow: 0 12px 35px rgba(15, 23, 42, 0.07);
+      --bg: #070b14;
+      --bg-soft: #0b1120;
+      --card: rgba(15, 23, 42, 0.72);
+      --card-solid: #0d1424;
+      --blue: #3b82f6;
+      --blue-bright: #60a5fa;
+      --blue-dark: #2563eb;
+      --blue-soft: rgba(59, 130, 246, 0.12);
+      --text: #f8fafc;
+      --text-soft: #cbd5e1;
+      --muted: #94a3b8;
+      --border: rgba(148, 163, 184, 0.14);
+      --border-blue: rgba(59, 130, 246, 0.35);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
       --radius: 18px;
       --max-width: 1120px;
     }
@@ -35,15 +42,63 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--white);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      background:
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(37, 99, 235, 0.09),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 85% 35%,
+          rgba(59, 130, 246, 0.06),
+          transparent 30%
+        ),
+        var(--bg);
+
       color: var(--text);
       line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,0.025) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.025) 1px,
+          transparent 1px
+        );
+
+      background-size: 50px 50px;
+
+      mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent 75%
+      );
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
     .container {
@@ -59,59 +114,94 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+
+      background: rgba(7, 11, 20, 0.78);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid var(--border);
     }
 
     nav {
       min-height: 74px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 30px;
     }
 
-.logo {
-  font-size: 19px;
-  font-weight: 800;
-  letter-spacing: -0.4px;
-  color: var(--navy);
-  white-space: nowrap;
-}
+    .logo {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      color: var(--text);
+      white-space: nowrap;
+    }
 
-.logo span {
-  color: var(--blue);
-  font-weight: 700;
-}
+    .logo span {
+      color: var(--blue-bright);
+      font-weight: 700;
+    }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 27px;
       list-style: none;
     }
 
     .nav-links a {
-      font-size: 14px;
+      position: relative;
+
+      font-size: 13px;
       font-weight: 600;
       color: var(--muted);
-      transition: 0.2s ease;
+
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+
+      width: 0;
+      height: 2px;
+
+      background: var(--blue);
+      border-radius: 20px;
+
+      transition: width 0.25s ease;
     }
 
     .nav-links a:hover {
-      color: var(--blue);
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
     }
 
     .nav-cta {
-      padding: 10px 17px;
+      padding: 9px 16px;
+
+      border: 1px solid var(--border-blue);
       border-radius: 9px;
-      background: var(--navy);
-      color: white !important;
+
+      background: rgba(59, 130, 246, 0.08);
+      color: var(--blue-bright) !important;
+    }
+
+    .nav-cta::after {
+      display: none;
     }
 
     .nav-cta:hover {
-      background: var(--blue);
+      background: rgba(59, 130, 246, 0.16);
+      border-color: rgba(96, 165, 250, 0.55);
     }
 
     /* =========================
@@ -121,190 +211,380 @@
     .hero {
       position: relative;
       overflow: hidden;
+
+      padding: 115px 0 105px;
+
       background:
-        radial-gradient(circle at 85% 15%, rgba(23, 105, 224, 0.10), transparent 28%),
-        linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-      padding: 105px 0 95px;
+        radial-gradient(
+          circle at 75% 30%,
+          rgba(37, 99, 235, 0.12),
+          transparent 30%
+        );
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      top: -250px;
+      right: -180px;
+
+      border-radius: 50%;
+
+      background: rgba(59, 130, 246, 0.08);
+
+      filter: blur(70px);
+
+      animation: floatingGlow 8s ease-in-out infinite;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.12fr 0.88fr;
+
       align-items: center;
+
       gap: 70px;
+    }
+
+    .hero-content {
+      animation: fadeUp 0.8s ease both;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 9px;
+
       padding: 7px 12px;
+
+      border: 1px solid rgba(96, 165, 250, 0.18);
       border-radius: 999px;
-      background: var(--blue-light);
-      color: var(--blue-dark);
-      font-size: 12px;
+
+      background: rgba(59, 130, 246, 0.08);
+
+      color: var(--blue-bright);
+
+      font-size: 11px;
       font-weight: 800;
-      letter-spacing: 0.8px;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
-      margin-bottom: 20px;
+
+      margin-bottom: 22px;
     }
 
     .eyebrow::before {
       content: "";
+
       width: 7px;
       height: 7px;
+
       border-radius: 50%;
-      background: var(--blue);
+
+      background: var(--blue-bright);
+
+      box-shadow:
+        0 0 0 5px rgba(96, 165, 250, 0.08),
+        0 0 14px rgba(96, 165, 250, 0.6);
+
+      animation: pulse 2.5s ease-in-out infinite;
     }
 
     .hero h1 {
-      font-size: clamp(42px, 5vw, 68px);
-      line-height: 1.05;
-      letter-spacing: -2.8px;
-      color: var(--navy);
       max-width: 720px;
-      margin-bottom: 24px;
+
+      font-size: clamp(43px, 5vw, 68px);
+      line-height: 1.03;
+
+      letter-spacing: -3px;
+
+      color: var(--text);
+
+      margin-bottom: 25px;
     }
 
     .hero h1 span {
-      color: var(--blue);
+      display: block;
+
+      background:
+        linear-gradient(
+          90deg,
+          #60a5fa,
+          #3b82f6,
+          #93c5fd
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+
+      background-size: 200% auto;
+
+      animation: gradientMove 5s ease infinite;
     }
 
     .hero-subtitle {
-      font-size: 19px;
-      color: var(--muted);
       max-width: 650px;
-      margin-bottom: 32px;
+
+      font-size: 18px;
+
+      color: var(--muted);
+
+      margin-bottom: 33px;
     }
+
+    /* =========================
+       BUTTONS
+    ========================= */
 
     .buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 11px;
     }
 
     .btn {
+      position: relative;
+
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 13px 20px;
+      gap: 8px;
+
+      padding: 13px 19px;
+
       border-radius: 10px;
-      font-size: 14px;
-      font-weight: 700;
-      transition: 0.2s ease;
-      border: 1px solid transparent;
+
+      font-size: 13px;
+      font-weight: 750;
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
     }
 
     .btn.primary {
-      background: var(--blue);
+      background: linear-gradient(
+        135deg,
+        #3b82f6,
+        #2563eb
+      );
+
       color: white;
-      box-shadow: 0 8px 20px rgba(23, 105, 224, 0.22);
+
+      box-shadow:
+        0 10px 30px rgba(37, 99, 235, 0.24);
+    }
+
+    .btn.primary::after {
+      content: "→";
+
+      transition: transform 0.25s ease;
     }
 
     .btn.primary:hover {
-      background: var(--blue-dark);
-      transform: translateY(-1px);
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 15px 35px rgba(37, 99, 235, 0.36);
+    }
+
+    .btn.primary:hover::after {
+      transform: translateX(4px);
     }
 
     .btn.secondary {
-      background: white;
-      color: var(--navy);
-      border-color: var(--border);
+      background: rgba(255,255,255,0.025);
+
+      border: 1px solid var(--border);
+
+      color: var(--text-soft);
     }
 
     .btn.secondary:hover {
-      border-color: var(--blue);
-      color: var(--blue);
+      transform: translateY(-3px);
+
+      border-color: var(--border-blue);
+
+      background: rgba(59, 130, 246, 0.08);
+
+      color: var(--text);
     }
+
+    /* =========================
+       HERO CARD
+    ========================= */
 
     .hero-card {
       position: relative;
-      background: var(--navy);
-      border-radius: 24px;
+
       padding: 34px;
-      color: white;
-      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.17);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(20, 32, 56, 0.94),
+          rgba(10, 16, 29, 0.96)
+        );
+
+      border: 1px solid rgba(96, 165, 250, 0.16);
+
+      border-radius: 24px;
+
+      box-shadow: var(--shadow);
+
       overflow: hidden;
+
+      animation:
+        fadeUp 0.9s 0.15s ease both,
+        floatingCard 6s ease-in-out infinite;
+    }
+
+    .hero-card::before {
+      content: "";
+
+      position: absolute;
+
+      width: 230px;
+      height: 230px;
+
+      top: -120px;
+      right: -90px;
+
+      border-radius: 50%;
+
+      background: rgba(59, 130, 246, 0.17);
+
+      filter: blur(35px);
     }
 
     .hero-card::after {
       content: "";
+
       position: absolute;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background: rgba(23, 105, 224, 0.3);
-      right: -80px;
-      top: -80px;
+
+      left: 0;
+      top: 0;
+
+      width: 3px;
+      height: 100%;
+
+      background:
+        linear-gradient(
+          to bottom,
+          transparent,
+          var(--blue),
+          transparent
+        );
     }
 
     .hero-card-label {
-      font-size: 11px;
+      position: relative;
+      z-index: 2;
+
+      color: var(--blue-bright);
+
+      font-size: 10px;
+
       text-transform: uppercase;
-      letter-spacing: 1.4px;
-      color: #93c5fd;
+      letter-spacing: 1.6px;
+
       font-weight: 800;
-      margin-bottom: 12px;
+
+      margin-bottom: 13px;
     }
 
     .hero-card h2 {
-      font-size: 28px;
-      line-height: 1.2;
-      letter-spacing: -0.7px;
-      margin-bottom: 25px;
       position: relative;
       z-index: 2;
+
+      font-size: 28px;
+
+      line-height: 1.2;
+
+      letter-spacing: -0.8px;
+
+      margin-bottom: 25px;
     }
 
     .hero-stat {
+      position: relative;
+      z-index: 2;
+
       padding: 17px 0;
-      border-top: 1px solid rgba(255,255,255,0.12);
+
+      border-top: 1px solid rgba(148,163,184,0.12);
     }
 
     .hero-stat strong {
       display: block;
-      font-size: 15px;
-      margin-bottom: 2px;
+
+      font-size: 14px;
+
+      color: var(--text);
+
+      margin-bottom: 3px;
     }
 
     .hero-stat span {
-      color: #94a3b8;
-      font-size: 13px;
+      display: block;
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+      line-height: 1.55;
     }
 
     /* =========================
-       SECTION
+       SECTIONS
     ========================= */
 
     section {
-      padding: 92px 0;
+      padding: 95px 0;
     }
 
     .section-header {
-      max-width: 690px;
-      margin-bottom: 42px;
+      max-width: 700px;
+
+      margin-bottom: 45px;
     }
 
     .section-label {
-      color: var(--blue);
-      font-size: 12px;
+      color: var(--blue-bright);
+
+      font-size: 10px;
+
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.7px;
+
       font-weight: 800;
-      margin-bottom: 10px;
+
+      margin-bottom: 11px;
     }
 
     .section-header h2 {
-      color: var(--navy);
-      font-size: clamp(30px, 4vw, 42px);
-      line-height: 1.15;
-      letter-spacing: -1.5px;
-      margin-bottom: 14px;
+      color: var(--text);
+
+      font-size: clamp(31px, 4vw, 43px);
+
+      line-height: 1.13;
+
+      letter-spacing: -1.7px;
+
+      margin-bottom: 15px;
     }
 
     .section-header p {
       color: var(--muted);
-      font-size: 16px;
+
+      font-size: 15px;
     }
 
     /* =========================
@@ -312,34 +592,63 @@
     ========================= */
 
     .about {
-      background: var(--bg);
+      background: rgba(11, 17, 32, 0.55);
+
+      border-top: 1px solid rgba(148,163,184,0.06);
+      border-bottom: 1px solid rgba(148,163,184,0.06);
     }
 
     .about-grid {
       display: grid;
+
       grid-template-columns: 1.2fr 0.8fr;
+
       gap: 60px;
+
       align-items: start;
     }
 
     .about-text p {
       color: var(--muted);
+
+      font-size: 15px;
+
       margin-bottom: 18px;
-      font-size: 16px;
     }
 
     .strength-card {
-      background: white;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(17, 27, 47, 0.9),
+          rgba(10, 16, 29, 0.9)
+        );
+
       border: 1px solid var(--border);
+
       border-radius: var(--radius);
+
       padding: 28px;
+
       box-shadow: var(--shadow);
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+    }
+
+    .strength-card:hover {
+      transform: translateY(-5px);
+
+      border-color: var(--border-blue);
     }
 
     .strength-card h3 {
-      color: var(--navy);
-      font-size: 17px;
-      margin-bottom: 20px;
+      color: var(--text);
+
+      font-size: 16px;
+
+      margin-bottom: 19px;
     }
 
     .strength-list {
@@ -348,10 +657,17 @@
 
     .strength-list li {
       display: flex;
+
       gap: 12px;
+
       padding: 11px 0;
-      border-bottom: 1px solid #eef2f7;
-      font-size: 14px;
+
+      border-bottom: 1px solid rgba(148,163,184,0.09);
+
+      color: var(--text-soft);
+
+      font-size: 13px;
+
       font-weight: 600;
     }
 
@@ -360,7 +676,8 @@
     }
 
     .check {
-      color: var(--blue);
+      color: var(--blue-bright);
+
       font-weight: 900;
     }
 
@@ -370,41 +687,101 @@
 
     .services-grid {
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       gap: 18px;
     }
 
     .service-card {
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
+      position: relative;
+
+      overflow: hidden;
+
+      min-height: 205px;
+
       padding: 27px;
-      background: white;
-      transition: 0.25s ease;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(17, 27, 47, 0.76),
+          rgba(9, 14, 26, 0.76)
+        );
+
+      border: 1px solid var(--border);
+
+      border-radius: var(--radius);
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .service-card::before {
+      content: "";
+
+      position: absolute;
+
+      width: 90px;
+      height: 90px;
+
+      top: -45px;
+      right: -45px;
+
+      border-radius: 50%;
+
+      background: rgba(59,130,246,0.12);
+
+      transition: transform 0.4s ease;
     }
 
     .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-      border-color: #cbdcf8;
+      transform: translateY(-7px);
+
+      border-color: var(--border-blue);
+
+      box-shadow:
+        0 18px 45px rgba(0,0,0,0.22);
+    }
+
+    .service-card:hover::before {
+      transform: scale(2.4);
     }
 
     .service-number {
-      color: var(--blue);
-      font-size: 12px;
-      font-weight: 800;
+      position: relative;
+
+      color: var(--blue-bright);
+
+      font-size: 10px;
+
       letter-spacing: 1px;
+
+      font-weight: 800;
+
       margin-bottom: 20px;
     }
 
     .service-card h3 {
-      color: var(--navy);
-      font-size: 17px;
+      position: relative;
+
+      color: var(--text);
+
+      font-size: 16px;
+
       margin-bottom: 9px;
     }
 
     .service-card p {
+      position: relative;
+
       color: var(--muted);
-      font-size: 14px;
+
+      font-size: 13px;
+
+      line-height: 1.65;
     }
 
     /* =========================
@@ -412,108 +789,189 @@
     ========================= */
 
     .samples {
-      background: var(--bg);
+      background:
+        linear-gradient(
+          180deg,
+          rgba(11,17,32,0.58),
+          rgba(7,11,20,0.88)
+        );
+
+      border-top: 1px solid rgba(148,163,184,0.06);
+      border-bottom: 1px solid rgba(148,163,184,0.06);
     }
 
     .sample-grid {
       display: grid;
+
       grid-template-columns: repeat(2, 1fr);
+
       gap: 20px;
     }
 
     .sample-card {
       display: flex;
       flex-direction: column;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
+
+      min-height: 250px;
+
       padding: 28px;
-      min-height: 245px;
-      transition: 0.25s ease;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(17,27,47,0.82),
+          rgba(9,14,26,0.82)
+        );
+
+      border: 1px solid var(--border);
+
+      border-radius: var(--radius);
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
     }
 
     .sample-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-      border-color: #cbdcf8;
+      transform: translateY(-7px);
+
+      border-color: var(--border-blue);
+
+      box-shadow:
+        0 20px 50px rgba(0,0,0,0.25);
     }
 
     .sample-top {
       display: flex;
+
+      align-items: center;
       justify-content: space-between;
+
       gap: 15px;
+
       margin-bottom: 22px;
     }
 
     .sample-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: var(--blue-light);
-      color: var(--blue);
+      width: 45px;
+      height: 45px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
+      border-radius: 12px;
+
+      background: rgba(59,130,246,0.1);
+
+      border: 1px solid rgba(59,130,246,0.16);
+
+      color: var(--blue-bright);
+
+      font-size: 12px;
+
       font-weight: 900;
-      font-size: 17px;
     }
 
     .sample-type {
-      font-size: 11px;
       color: var(--muted);
+
+      font-size: 9px;
+
       text-transform: uppercase;
-      letter-spacing: 1px;
+
+      letter-spacing: 1.4px;
+
       font-weight: 800;
-      padding-top: 8px;
     }
 
     .sample-card h3 {
-      font-size: 19px;
-      color: var(--navy);
+      color: var(--text);
+
+      font-size: 18px;
+
       margin-bottom: 8px;
     }
 
     .sample-card p {
-      font-size: 14px;
       color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.65;
+
       margin-bottom: 20px;
     }
 
     .sample-tags {
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 7px;
+
       margin-top: auto;
+
       margin-bottom: 20px;
     }
 
     .tag {
       padding: 5px 9px;
-      background: #f1f5f9;
+
+      background: rgba(148,163,184,0.07);
+
+      border: 1px solid rgba(148,163,184,0.08);
+
       border-radius: 6px;
-      font-size: 11px;
-      color: #475569;
+
+      color: #aebdce;
+
+      font-size: 10px;
+
       font-weight: 700;
     }
 
     .sample-link {
-      color: var(--blue);
-      font-size: 13px;
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 5px;
+
+      color: var(--blue-bright);
+
+      font-size: 12px;
+
       font-weight: 800;
+
+      transition: gap 0.25s ease;
     }
 
     .sample-link:hover {
-      color: var(--blue-dark);
+      gap: 9px;
+
+      color: #93c5fd;
     }
 
     .demo-note {
       margin-top: 24px;
+
       padding: 15px 18px;
-      background: #eef6ff;
-      border: 1px solid #d7e9ff;
+
+      background: rgba(59,130,246,0.06);
+
+      border: 1px solid rgba(59,130,246,0.12);
+
       border-radius: 10px;
-      color: #475569;
-      font-size: 13px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    .demo-note strong {
+      color: var(--text-soft);
     }
 
     /* =========================
@@ -522,25 +980,42 @@
 
     .tools-wrapper {
       display: flex;
+
       flex-wrap: wrap;
-      gap: 10px;
+
+      gap: 9px;
     }
 
     .tool {
-      padding: 10px 15px;
-      background: white;
+      padding: 10px 14px;
+
+      background: rgba(17,27,47,0.7);
+
       border: 1px solid var(--border);
+
       border-radius: 9px;
-      color: var(--text);
-      font-size: 13px;
+
+      color: var(--text-soft);
+
+      font-size: 12px;
+
       font-weight: 700;
-      transition: 0.2s ease;
+
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        background 0.25s ease;
     }
 
     .tool:hover {
-      border-color: var(--blue);
-      color: var(--blue);
-      background: var(--blue-light);
+      transform: translateY(-3px);
+
+      border-color: var(--border-blue);
+
+      color: var(--blue-bright);
+
+      background: rgba(59,130,246,0.08);
     }
 
     /* =========================
@@ -548,27 +1023,47 @@
     ========================= */
 
     .experience {
-      background: var(--bg);
+      background:
+        linear-gradient(
+          180deg,
+          rgba(11,17,32,0.65),
+          rgba(7,11,20,0.95)
+        );
+
+      border-top: 1px solid rgba(148,163,184,0.06);
     }
 
     .timeline {
       position: relative;
+
       max-width: 850px;
     }
 
     .timeline::before {
       content: "";
+
       position: absolute;
+
       left: 8px;
+
       top: 10px;
       bottom: 10px;
-      width: 2px;
-      background: #dbe6f5;
+
+      width: 1px;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(59,130,246,0.6),
+          rgba(148,163,184,0.1)
+        );
     }
 
     .timeline-item {
       position: relative;
+
       padding-left: 38px;
+
       margin-bottom: 34px;
     }
 
@@ -578,77 +1073,134 @@
 
     .timeline-dot {
       position: absolute;
+
       left: 0;
       top: 8px;
-      width: 18px;
-      height: 18px;
+
+      width: 17px;
+      height: 17px;
+
       border-radius: 50%;
-      background: white;
-      border: 4px solid var(--blue);
+
+      background: var(--bg);
+
+      border: 3px solid var(--blue);
+
+      box-shadow:
+        0 0 0 5px rgba(59,130,246,0.07),
+        0 0 18px rgba(59,130,246,0.3);
     }
 
     .timeline-item h3 {
-      color: var(--navy);
-      font-size: 17px;
+      color: var(--text);
+
+      font-size: 16px;
+
       margin-bottom: 4px;
     }
 
     .timeline-item .company {
-      color: var(--blue);
-      font-size: 13px;
+      color: var(--blue-bright);
+
+      font-size: 12px;
+
       font-weight: 700;
+
       margin-bottom: 8px;
     }
 
     .timeline-item p {
       color: var(--muted);
-      font-size: 14px;
+
+      font-size: 13px;
     }
 
     /* =========================
-       CTA
+       CONTACT
     ========================= */
 
     .contact {
-      padding: 90px 0 100px;
+      padding: 95px 0 105px;
     }
 
     .contact-box {
       position: relative;
+
       overflow: hidden;
-      background: var(--navy);
-      border-radius: 25px;
-      padding: 60px;
+
+      padding: 65px 40px;
+
       text-align: center;
-      color: white;
+
+      background:
+        radial-gradient(
+          circle at 50% 120%,
+          rgba(37,99,235,0.25),
+          transparent 48%
+        ),
+        linear-gradient(
+          145deg,
+          #101a2f,
+          #080d18
+        );
+
+      border: 1px solid rgba(96,165,250,0.16);
+
+      border-radius: 25px;
+
+      box-shadow: var(--shadow);
     }
 
     .contact-box::before {
       content: "";
+
       position: absolute;
+
       width: 280px;
       height: 280px;
+
+      top: -180px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
       border-radius: 50%;
-      background: rgba(23, 105, 224, 0.25);
-      top: -150px;
-      left: -100px;
+
+      background: rgba(59,130,246,0.14);
+
+      filter: blur(45px);
+
+      animation: floatingGlow 7s ease-in-out infinite;
     }
 
     .contact-box h2 {
       position: relative;
       z-index: 2;
-      font-size: clamp(30px, 4vw, 43px);
-      line-height: 1.15;
-      letter-spacing: -1.5px;
-      margin-bottom: 14px;
+
+      max-width: 700px;
+
+      margin: 0 auto 14px;
+
+      color: var(--text);
+
+      font-size: clamp(31px, 4vw, 44px);
+
+      line-height: 1.13;
+
+      letter-spacing: -1.6px;
     }
 
     .contact-box p {
       position: relative;
       z-index: 2;
-      max-width: 600px;
+
+      max-width: 620px;
+
       margin: 0 auto 28px;
-      color: #cbd5e1;
+
+      color: var(--muted);
+
+      font-size: 14px;
     }
 
     .contact-box .btn {
@@ -657,11 +1209,14 @@
     }
 
     .contact-email {
-      margin-top: 22px;
-      font-size: 13px;
-      color: #94a3b8;
       position: relative;
       z-index: 2;
+
+      margin-top: 21px;
+
+      color: #71829a;
+
+      font-size: 11px;
     }
 
     /* =========================
@@ -669,26 +1224,114 @@
     ========================= */
 
     footer {
-      border-top: 1px solid var(--border);
       padding: 28px 0;
-      background: white;
+
+      background: #050810;
+
+      border-top: 1px solid var(--border);
     }
 
     .footer-inner {
       display: flex;
+
       align-items: center;
       justify-content: space-between;
+
       gap: 20px;
     }
 
     footer p {
-      color: var(--muted);
-      font-size: 12px;
+      color: #64748b;
+
+      font-size: 11px;
     }
 
     .footer-name {
+      color: var(--text-soft);
+
       font-weight: 800;
-      color: var(--navy);
+    }
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+
+      transform: translateY(25px);
+
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.65;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.15);
+      }
+    }
+
+    @keyframes floatingGlow {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(-12px, 15px);
+      }
+    }
+
+    @keyframes floatingCard {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     /* =========================
@@ -696,13 +1339,14 @@
     ========================= */
 
     @media (max-width: 900px) {
+
       .hero-grid,
       .about-grid {
         grid-template-columns: 1fr;
       }
 
       .hero-grid {
-        gap: 45px;
+        gap: 48px;
       }
 
       .services-grid {
@@ -710,11 +1354,12 @@
       }
 
       .hero {
-        padding: 80px 0;
+        padding: 85px 0;
       }
     }
 
     @media (max-width: 650px) {
+
       nav {
         min-height: 65px;
       }
@@ -724,11 +1369,11 @@
       }
 
       section {
-        padding: 70px 0;
+        padding: 72px 0;
       }
 
       .hero {
-        padding: 65px 0 70px;
+        padding: 70px 0 75px;
       }
 
       .hero h1 {
@@ -737,7 +1382,7 @@
       }
 
       .hero-subtitle {
-        font-size: 17px;
+        font-size: 16px;
       }
 
       .hero-card {
@@ -750,7 +1395,7 @@
       }
 
       .contact-box {
-        padding: 42px 25px;
+        padding: 45px 24px;
       }
 
       .footer-inner {
@@ -766,6 +1411,21 @@
         width: 100%;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 
@@ -778,15 +1438,23 @@
   <header>
     <div class="container">
       <nav>
-        <a href="#" class="logo">   Roger <span>Lagasca III</span> </a>
+
+        <a href="#" class="logo">
+          Roger <span>Lagasca III</span>
+        </a>
 
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#work">Work Samples</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="#contact" class="nav-cta">Let's Connect</a></li>
+          <li>
+            <a href="#contact" class="nav-cta">
+              Let's Connect
+            </a>
+          </li>
         </ul>
+
       </nav>
     </div>
   </header>
@@ -799,10 +1467,13 @@
   <main>
 
     <section class="hero">
+
       <div class="container">
+
         <div class="hero-grid">
 
-          <div>
+          <div class="hero-content">
+
             <div class="eyebrow">
               Executive Virtual Assistant
             </div>
@@ -819,20 +1490,25 @@
             </p>
 
             <div class="buttons">
+
               <a class="btn primary" href="#work">
                 View Work Samples
               </a>
 
-              <a class="btn secondary"
-                 href="Roger_Lagasca_III_Resume.pdf"
-                 target="_blank">
+              <a
+                class="btn secondary"
+                href="Roger_Lagasca_III_Resume.pdf"
+                target="_blank"
+              >
                 View Resume
               </a>
 
               <a class="btn secondary" href="#contact">
                 Let's Connect
               </a>
+
             </div>
+
           </div>
 
 
@@ -848,24 +1524,42 @@
             </h2>
 
             <div class="hero-stat">
-              <strong>Executive & Administrative Support</strong>
-              <span>Keeping priorities, tasks, and information organized.</span>
+              <strong>
+                Executive & Administrative Support
+              </strong>
+
+              <span>
+                Keeping priorities, tasks, and information organized.
+              </span>
             </div>
 
             <div class="hero-stat">
-              <strong>CRM & Operations</strong>
-              <span>Maintaining systems, workflows, data, and pipelines.</span>
+              <strong>
+                CRM & Operations
+              </strong>
+
+              <span>
+                Maintaining systems, workflows, data, and pipelines.
+              </span>
             </div>
 
             <div class="hero-stat">
-              <strong>Client & Customer Support</strong>
-              <span>Professional communication, troubleshooting, and escalation handling.</span>
+              <strong>
+                Client & Customer Support
+              </strong>
+
+              <span>
+                Professional communication, troubleshooting,
+                and escalation handling.
+              </span>
             </div>
 
           </div>
 
         </div>
+
       </div>
+
     </section>
 
 
@@ -874,20 +1568,30 @@
     ========================= -->
 
     <section class="about" id="about">
+
       <div class="container">
 
-        <div class="section-header">
-          <div class="section-label">About Me</div>
-          <h2>More than task completion.</h2>
+        <div class="section-header reveal">
+
+          <div class="section-label">
+            About Me
+          </div>
+
+          <h2>
+            More than task completion.
+          </h2>
+
           <p>
-            I focus on making the work behind the business more organized,
-            efficient, and dependable.
+            I focus on making the work behind the business
+            more organized, efficient, and dependable.
           </p>
+
         </div>
+
 
         <div class="about-grid">
 
-          <div class="about-text">
+          <div class="about-text reveal">
 
             <p>
               I’m a results-driven Executive Virtual Assistant and
@@ -897,26 +1601,30 @@
             </p>
 
             <p>
-              My strength is taking ownership of the work behind the scenes —
-              keeping administrative tasks organized, maintaining CRM systems,
-              managing data and reports, supporting clients, improving workflows,
-              and helping day-to-day operations run smoothly.
+              My strength is taking ownership of the work behind the
+              scenes — keeping administrative tasks organized,
+              maintaining CRM systems, managing data and reports,
+              supporting clients, improving workflows, and helping
+              day-to-day operations run smoothly.
             </p>
 
             <p>
-              I’m comfortable working independently, handling sensitive or
-              time-critical tasks, communicating professionally with clients
-              and teams, and learning new tools and processes quickly.
+              I’m comfortable working independently, handling sensitive
+              or time-critical tasks, communicating professionally with
+              clients and teams, and learning new tools and processes quickly.
             </p>
 
           </div>
 
 
-          <div class="strength-card">
+          <div class="strength-card reveal">
 
-            <h3>Core Strengths</h3>
+            <h3>
+              Core Strengths
+            </h3>
 
             <ul class="strength-list">
+
               <li>
                 <span class="check">✓</span>
                 Executive & Administrative Support
@@ -951,12 +1659,15 @@
                 <span class="check">✓</span>
                 Team Coordination & Leadership
               </li>
+
             </ul>
 
           </div>
 
         </div>
+
       </div>
+
     </section>
 
 
@@ -965,10 +1676,14 @@
     ========================= -->
 
     <section id="services">
+
       <div class="container">
 
-        <div class="section-header">
-          <div class="section-label">Services</div>
+        <div class="section-header reveal">
+
+          <div class="section-label">
+            Services
+          </div>
 
           <h2>
             Practical support that keeps
@@ -979,59 +1694,90 @@
             Flexible support across administration, CRM, operations,
             customer experience, and business organization.
           </p>
+
         </div>
 
 
         <div class="services-grid">
 
-          <div class="service-card">
+          <div class="service-card reveal">
             <div class="service-number">01</div>
-            <h3>Executive & Administrative Support</h3>
+
+            <h3>
+              Executive & Administrative Support
+            </h3>
+
             <p>
               Email and calendar support, data entry, documentation,
               organization, research, and day-to-day administrative tasks.
             </p>
           </div>
 
-          <div class="service-card">
+
+          <div class="service-card reveal">
             <div class="service-number">02</div>
-            <h3>CRM Management</h3>
+
+            <h3>
+              CRM Management
+            </h3>
+
             <p>
               CRM maintenance, data organization, pipeline management,
               follow-ups, records, and workflow support.
             </p>
           </div>
 
-          <div class="service-card">
+
+          <div class="service-card reveal">
             <div class="service-number">03</div>
-            <h3>Operations Support</h3>
+
+            <h3>
+              Operations Support
+            </h3>
+
             <p>
               Workflow coordination, trackers, process organization,
               reporting, and backend operational support.
             </p>
           </div>
 
-          <div class="service-card">
+
+          <div class="service-card reveal">
             <div class="service-number">04</div>
-            <h3>Customer & Client Support</h3>
+
+            <h3>
+              Customer & Client Support
+            </h3>
+
             <p>
-              Professional communication, troubleshooting, escalation
-              handling, follow-ups, and customer experience support.
+              Professional communication, troubleshooting,
+              escalation handling, follow-ups, and customer
+              experience support.
             </p>
           </div>
 
-          <div class="service-card">
+
+          <div class="service-card reveal">
             <div class="service-number">05</div>
-            <h3>Data & Reporting</h3>
+
+            <h3>
+              Data & Reporting
+            </h3>
+
             <p>
               Google Sheets trackers, structured data, performance
               monitoring, reporting, and data checking.
             </p>
           </div>
 
-          <div class="service-card">
+
+          <div class="service-card reveal">
             <div class="service-number">06</div>
-            <h3>Process & QA Support</h3>
+
+            <h3>
+              Process & QA Support
+            </h3>
+
             <p>
               SOP documentation, quality checking, workflow improvement,
               compliance review, and process consistency.
@@ -1041,6 +1787,7 @@
         </div>
 
       </div>
+
     </section>
 
 
@@ -1049,10 +1796,14 @@
     ========================= -->
 
     <section class="samples" id="work">
+
       <div class="container">
 
-        <div class="section-header">
-          <div class="section-label">Selected Work</div>
+        <div class="section-header reveal">
+
+          <div class="section-label">
+            Selected Work
+          </div>
 
           <h2>
             Work samples & demonstrations.
@@ -1062,21 +1813,29 @@
             A selection of demonstration projects showing how I approach
             CRM, administration, reporting, lead generation, QA, and SOP work.
           </p>
+
         </div>
 
 
         <div class="sample-grid">
 
-          <!-- SAMPLE 01 -->
-
-          <div class="sample-card">
+          <div class="sample-card reveal">
 
             <div class="sample-top">
-              <div class="sample-icon">01</div>
-              <div class="sample-type">CRM</div>
+
+              <div class="sample-icon">
+                01
+              </div>
+
+              <div class="sample-type">
+                CRM
+              </div>
+
             </div>
 
-            <h3>CRM Workflow & Pipeline</h3>
+            <h3>
+              CRM Workflow & Pipeline
+            </h3>
 
             <p>
               Demonstration of organized CRM stages, lead movement,
@@ -1089,25 +1848,34 @@
               <span class="tag">Workflow</span>
             </div>
 
-            <a class="sample-link"
-               href="samples/01_CRM_Workflow_Sample.pdf"
-               target="_blank">
+            <a
+              class="sample-link"
+              href="samples/01_CRM_Workflow_Sample.pdf"
+              target="_blank"
+            >
               View Sample →
             </a>
 
           </div>
 
 
-          <!-- SAMPLE 02 -->
-
-          <div class="sample-card">
+          <div class="sample-card reveal">
 
             <div class="sample-top">
-              <div class="sample-icon">02</div>
-              <div class="sample-type">ADMIN</div>
+
+              <div class="sample-icon">
+                02
+              </div>
+
+              <div class="sample-type">
+                ADMIN
+              </div>
+
             </div>
 
-            <h3>Executive Admin Support</h3>
+            <h3>
+              Executive Admin Support
+            </h3>
 
             <p>
               Demonstration of organized administrative support,
@@ -1120,25 +1888,34 @@
               <span class="tag">Organization</span>
             </div>
 
-            <a class="sample-link"
-               href="samples/02_Executive_Admin_Support_Sample.pdf"
-               target="_blank">
+            <a
+              class="sample-link"
+              href="samples/02_Executive_Admin_Support_Sample.pdf"
+              target="_blank"
+            >
               View Sample →
             </a>
 
           </div>
 
 
-          <!-- SAMPLE 03 -->
-
-          <div class="sample-card">
+          <div class="sample-card reveal">
 
             <div class="sample-top">
-              <div class="sample-icon">03</div>
-              <div class="sample-type">REPORTING</div>
+
+              <div class="sample-icon">
+                03
+              </div>
+
+              <div class="sample-type">
+                REPORTING
+              </div>
+
             </div>
 
-            <h3>Google Sheets KPI Dashboard</h3>
+            <h3>
+              Google Sheets KPI Dashboard
+            </h3>
 
             <p>
               Demonstration of structured trackers, KPI monitoring,
@@ -1151,25 +1928,34 @@
               <span class="tag">Reporting</span>
             </div>
 
-            <a class="sample-link"
-               href="samples/03_Google_Sheets_KPI_Sample.pdf"
-               target="_blank">
+            <a
+              class="sample-link"
+              href="samples/03_Google_Sheets_KPI_Sample.pdf"
+              target="_blank"
+            >
               View Sample →
             </a>
 
           </div>
 
 
-          <!-- SAMPLE 04 -->
-
-          <div class="sample-card">
+          <div class="sample-card reveal">
 
             <div class="sample-top">
-              <div class="sample-icon">04</div>
-              <div class="sample-type">LEAD GEN</div>
+
+              <div class="sample-icon">
+                04
+              </div>
+
+              <div class="sample-type">
+                LEAD GEN
+              </div>
+
             </div>
 
-            <h3>Lead Generation & Research</h3>
+            <h3>
+              Lead Generation & Research
+            </h3>
 
             <p>
               Demonstration of targeted prospect research,
@@ -1182,25 +1968,34 @@
               <span class="tag">Data</span>
             </div>
 
-            <a class="sample-link"
-               href="samples/04_Lead_Generation_Sample.pdf"
-               target="_blank">
+            <a
+              class="sample-link"
+              href="samples/04_Lead_Generation_Sample.pdf"
+              target="_blank"
+            >
               View Sample →
             </a>
 
           </div>
 
 
-          <!-- SAMPLE 05 -->
-
-          <div class="sample-card">
+          <div class="sample-card reveal">
 
             <div class="sample-top">
-              <div class="sample-icon">05</div>
-              <div class="sample-type">QUALITY</div>
+
+              <div class="sample-icon">
+                05
+              </div>
+
+              <div class="sample-type">
+                QUALITY
+              </div>
+
             </div>
 
-            <h3>QA & Operations</h3>
+            <h3>
+              QA & Operations
+            </h3>
 
             <p>
               Demonstration of quality evaluation, scorecards,
@@ -1213,25 +2008,34 @@
               <span class="tag">Scorecards</span>
             </div>
 
-            <a class="sample-link"
-               href="samples/05_QA_Operations_Sample.pdf"
-               target="_blank">
+            <a
+              class="sample-link"
+              href="samples/05_QA_Operations_Sample.pdf"
+              target="_blank"
+            >
               View Sample →
             </a>
 
           </div>
 
 
-          <!-- SAMPLE 06 -->
-
-          <div class="sample-card">
+          <div class="sample-card reveal">
 
             <div class="sample-top">
-              <div class="sample-icon">06</div>
-              <div class="sample-type">SOP</div>
+
+              <div class="sample-icon">
+                06
+              </div>
+
+              <div class="sample-type">
+                SOP
+              </div>
+
             </div>
 
-            <h3>SOP & Process Documentation</h3>
+            <h3>
+              SOP & Process Documentation
+            </h3>
 
             <p>
               Demonstration of clear process documentation designed
@@ -1244,9 +2048,11 @@
               <span class="tag">Documentation</span>
             </div>
 
-            <a class="sample-link"
-               href="samples/06_SOP_Process_Documentation_Sample.pdf"
-               target="_blank">
+            <a
+              class="sample-link"
+              href="samples/06_SOP_Process_Documentation_Sample.pdf"
+              target="_blank"
+            >
               View Sample →
             </a>
 
@@ -1255,14 +2061,18 @@
         </div>
 
 
-        <div class="demo-note">
+        <div class="demo-note reveal">
+
           <strong>Note:</strong>
-          These portfolio pieces are demonstration projects created to
-          showcase my approach and capabilities. They use fictional data
-          and do not contain confidential client information.
+
+          These portfolio pieces are demonstration projects created
+          to showcase my approach and capabilities. They use fictional
+          data and do not contain confidential client information.
+
         </div>
 
       </div>
+
     </section>
 
 
@@ -1271,10 +2081,14 @@
     ========================= -->
 
     <section id="tools">
+
       <div class="container">
 
-        <div class="section-header">
-          <div class="section-label">Tools & Platforms</div>
+        <div class="section-header reveal">
+
+          <div class="section-label">
+            Tools & Platforms
+          </div>
 
           <h2>
             Comfortable across the tools
@@ -1285,10 +2099,11 @@
             Experienced with CRM platforms, productivity tools,
             spreadsheets, communication systems, and digital content tools.
           </p>
+
         </div>
 
 
-        <div class="tools-wrapper">
+        <div class="tools-wrapper reveal">
 
           <div class="tool">GoHighLevel</div>
           <div class="tool">Zoho</div>
@@ -1306,6 +2121,7 @@
         </div>
 
       </div>
+
     </section>
 
 
@@ -1314,10 +2130,14 @@
     ========================= -->
 
     <section class="experience" id="experience">
+
       <div class="container">
 
-        <div class="section-header">
-          <div class="section-label">Experience</div>
+        <div class="section-header reveal">
+
+          <div class="section-label">
+            Experience
+          </div>
 
           <h2>
             Nearly a decade of customer,
@@ -1328,15 +2148,19 @@
             Experience supporting global brands, customers, teams,
             and business operations across multiple roles.
           </p>
+
         </div>
 
 
         <div class="timeline">
 
-          <div class="timeline-item">
+          <div class="timeline-item reveal">
+
             <div class="timeline-dot"></div>
 
-            <h3>Independent Operations & Administrative Specialist</h3>
+            <h3>
+              Independent Operations & Administrative Specialist
+            </h3>
 
             <div class="company">
               Freelance Practice · Remote · July 2021–Present
@@ -1344,16 +2168,20 @@
 
             <p>
               Backend workflows, CRM systems, Google Sheets trackers,
-              lead generation, reporting, data organization, and digital
-              asset creation.
+              lead generation, reporting, data organization, and
+              digital asset creation.
             </p>
+
           </div>
 
 
-          <div class="timeline-item">
+          <div class="timeline-item reveal">
+
             <div class="timeline-dot"></div>
 
-            <h3>Call Monitoring & Quality Assurance Specialist</h3>
+            <h3>
+              Call Monitoring & Quality Assurance Specialist
+            </h3>
 
             <div class="company">
               Sitel · Amazon · Aug 2020–Jul 2021
@@ -1361,16 +2189,20 @@
 
             <p>
               QA evaluations, compliance audits, coaching, scorecards,
-              service-quality monitoring, and identification of operational
-              bottlenecks.
+              service-quality monitoring, and identification of
+              operational bottlenecks.
             </p>
+
           </div>
 
 
-          <div class="timeline-item">
+          <div class="timeline-item reveal">
+
             <div class="timeline-dot"></div>
 
-            <h3>Customer Service Representative & Assistant Team Leader</h3>
+            <h3>
+              Customer Service Representative & Assistant Team Leader
+            </h3>
 
             <div class="company">
               iQor · AT&T / DirecTV · Apr 2018–Jul 2020
@@ -1381,13 +2213,17 @@
               team assistance, performance monitoring, mentoring,
               retention, and daily floor operations.
             </p>
+
           </div>
 
 
-          <div class="timeline-item">
+          <div class="timeline-item reveal">
+
             <div class="timeline-dot"></div>
 
-            <h3>Technical Support Specialist</h3>
+            <h3>
+              Technical Support Specialist
+            </h3>
 
             <div class="company">
               Ibex · AT&T Mobility / Apple · Jun 2017–Apr 2018
@@ -1397,13 +2233,17 @@
               Technical troubleshooting, customer support,
               issue resolution, and escalation handling.
             </p>
+
           </div>
 
 
-          <div class="timeline-item">
+          <div class="timeline-item reveal">
+
             <div class="timeline-dot"></div>
 
-            <h3>Escalations Desk & Billing Specialist</h3>
+            <h3>
+              Escalations Desk & Billing Specialist
+            </h3>
 
             <div class="company">
               Sitel · DirecTV · Dec 2016–Jun 2017
@@ -1413,11 +2253,13 @@
               Critical escalations, billing concerns, retention,
               negotiation, customer resolution, and upselling.
             </p>
+
           </div>
 
         </div>
 
       </div>
+
     </section>
 
 
@@ -1429,7 +2271,7 @@
 
       <div class="container">
 
-        <div class="contact-box">
+        <div class="contact-box reveal">
 
           <h2>
             Let's make your operations
@@ -1442,8 +2284,10 @@
             I'd be happy to discuss how I can help.
           </p>
 
-          <a class="btn primary"
-             href="mailto:regoracsagaliii@gmail.com">
+          <a
+            class="btn primary"
+            href="mailto:regoracsagaliii@gmail.com"
+          >
             Email Me
           </a>
 
@@ -1471,7 +2315,10 @@
       <div class="footer-inner">
 
         <p>
-          <span class="footer-name">Roger Lagasca III</span>
+          <span class="footer-name">
+            Roger Lagasca III
+          </span>
+
           · Executive Virtual Assistant | Operations & CRM
         </p>
 
@@ -1484,6 +2331,47 @@
     </div>
 
   </footer>
+
+
+  <!-- =========================
+       SCROLL ANIMATION
+  ========================= -->
+
+  <script>
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+    const revealObserver =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("visible");
+
+              revealObserver.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+
+    revealElements.forEach((element) => {
+
+      revealObserver.observe(element);
+
+    });
+
+  </script>
 
 </body>
 </html>
