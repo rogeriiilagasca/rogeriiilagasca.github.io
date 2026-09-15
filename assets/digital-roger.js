@@ -8,11 +8,6 @@
 
     document.addEventListener("DOMContentLoaded", function () {
 
-        /*
-         * Prevent Digital Roger from appearing if the visitor
-         * dismissed him during this browser session.
-         */
-
         if (sessionStorage.getItem("digitalRogerDismissed") === "true") {
             createLauncherOnly();
             return;
@@ -22,63 +17,38 @@
 
     });
 
-
-    /* =====================================================
-       FACEBOOK / MESSENGER
-       ===================================================== */
-
-    const facebookProfile =
-        "https://www.facebook.com/rogeriii.lagasca/";
-
-
-    /* =====================================================
-       SECTION MAP
-       ===================================================== */
-
     const sections = {
-
         about: {
             target: "about",
             message:
                 "Here's where you can learn about Roger's approach, experience, and how he supports businesses behind the scenes."
         },
-
         services: {
             target: "services",
             message:
                 "Roger supports businesses with executive assistance, administrative operations, CRM management, workflow support, and more."
         },
-
         samples: {
             target: "work-samples",
             message:
                 "Here you'll find examples of CRM workflows, reporting, QA, lead generation, and process documentation."
         },
-
         tools: {
             target: "tools",
             message:
                 "Roger works comfortably with GoHighLevel, Zoho, Kartra, Salesforce, Google Workspace, Google Sheets, Microsoft Office, and Canva."
         },
-
         experience: {
             target: "experience",
             message:
                 "Roger brings nearly a decade of experience across customer service, technical support, quality assurance, operations, and team leadership."
         },
-
         contact: {
             target: "contact",
             message:
                 "Think Roger could be a good fit for your team? Let's connect."
         }
-
     };
-
-
-    /* =====================================================
-       CREATE ASSISTANT
-       ===================================================== */
 
     function createAssistant() {
 
@@ -87,16 +57,12 @@
         container.id = "digital-roger-container";
 
         container.innerHTML = `
-
             <div class="dr-panel"
                  role="region"
                  aria-label="Digital Roger AI Guide">
 
                 <div class="dr-panel-header">
-
-                    <span class="dr-label">
-                        Digital Roger
-                    </span>
+                    <span class="dr-label">Digital Roger</span>
 
                     <div class="dr-controls">
 
@@ -119,21 +85,13 @@
                         </button>
 
                     </div>
-
                 </div>
 
-
-                <p
-                    class="dr-message"
-                    id="dr-message"
-                    aria-live="polite">
+                <p class="dr-message" id="dr-message" aria-live="polite">
                     Hi! I'm Digital Roger. Let me show you around Roger's portfolio.
                 </p>
 
-
-                <div
-                    class="dr-actions"
-                    id="dr-actions">
+                <div class="dr-actions" id="dr-actions">
 
                     <button
                         class="dr-button"
@@ -149,20 +107,9 @@
                         Explore Freely
                     </button>
 
-                    <a
-                        class="dr-button messenger-button"
-                        href="${facebookProfile}"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        💬 Chat with Roger
-                    </a>
-
                 </div>
 
-
-                <div
-                    class="dr-navigation"
-                    id="dr-navigation">
+                <div class="dr-navigation" id="dr-navigation">
 
                     <div class="dr-navigation-label">
                         Explore the portfolio
@@ -170,48 +117,52 @@
 
                     <div class="dr-navigation-grid">
 
-                        <button class="dr-nav-button"
-                                data-section="about"
-                                type="button">
+                        <button
+                            class="dr-nav-button"
+                            data-section="about"
+                            type="button">
                             About
                         </button>
 
-                        <button class="dr-nav-button"
-                                data-section="services"
-                                type="button">
+                        <button
+                            class="dr-nav-button"
+                            data-section="services"
+                            type="button">
                             Services
                         </button>
 
-                        <button class="dr-nav-button"
-                                data-section="samples"
-                                type="button">
+                        <button
+                            class="dr-nav-button"
+                            data-section="samples"
+                            type="button">
                             Work Samples
                         </button>
 
-                        <button class="dr-nav-button"
-                                data-section="tools"
-                                type="button">
+                        <button
+                            class="dr-nav-button"
+                            data-section="tools"
+                            type="button">
                             Tools
                         </button>
 
-                        <button class="dr-nav-button"
-                                data-section="experience"
-                                type="button">
+                        <button
+                            class="dr-nav-button"
+                            data-section="experience"
+                            type="button">
                             Experience
                         </button>
 
-                        <button class="dr-nav-button"
-                                data-section="contact"
-                                type="button">
+                        <button
+                            class="dr-nav-button"
+                            data-section="contact"
+                            type="button">
                             Contact
                         </button>
 
                     </div>
-
                 </div>
 
             </div>
-
 
             <div
                 class="dr-avatar"
@@ -229,33 +180,19 @@
 
         document.body.appendChild(container);
 
-
         createLauncher();
-
 
         const message = document.getElementById("dr-message");
         const actions = document.getElementById("dr-actions");
         const navigation = document.getElementById("dr-navigation");
 
-        const tourButton =
-            document.getElementById("dr-tour");
+        const tourButton = document.getElementById("dr-tour");
+        const exploreButton = document.getElementById("dr-explore");
 
-        const exploreButton =
-            document.getElementById("dr-explore");
+        const minimizeButton = document.getElementById("dr-minimize");
+        const closeButton = document.getElementById("dr-close");
 
-        const minimizeButton =
-            document.getElementById("dr-minimize");
-
-        const closeButton =
-            document.getElementById("dr-close");
-
-        const avatar =
-            document.getElementById("dr-avatar");
-
-
-        /* =================================================
-           TOUR
-           ================================================= */
+        const avatar = document.getElementById("dr-avatar");
 
         const tour = [
 
@@ -266,43 +203,36 @@
             },
 
             {
-                message:
-                    sections.about.message,
+                message: sections.about.message,
                 target: sections.about.target
             },
 
             {
-                message:
-                    sections.services.message,
+                message: sections.services.message,
                 target: sections.services.target
             },
 
             {
-                message:
-                    sections.samples.message,
+                message: sections.samples.message,
                 target: sections.samples.target
             },
 
             {
-                message:
-                    sections.tools.message,
+                message: sections.tools.message,
                 target: sections.tools.target
             },
 
             {
-                message:
-                    sections.experience.message,
+                message: sections.experience.message,
                 target: sections.experience.target
             },
 
             {
-                message:
-                    sections.contact.message,
+                message: sections.contact.message,
                 target: sections.contact.target
             }
 
         ];
-
 
         let tourIndex = 0;
 
@@ -344,7 +274,6 @@
 
 
             actions.innerHTML = `
-
                 <button
                     class="dr-button"
                     id="dr-next"
@@ -362,17 +291,6 @@
                     Exit
 
                 </button>
-
-                <a
-                    class="dr-button messenger-button"
-                    href="${facebookProfile}"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    💬 Chat with Roger
-
-                </a>
-
             `;
 
 
@@ -406,17 +324,13 @@
         }
 
 
-        /* =================================================
-           FREE EXPLORE
-           ================================================= */
-
         function enableFreeExplore() {
 
             message.textContent =
                 "Explore freely. Choose any section and I'll take you there.";
 
-            actions.innerHTML = `
 
+            actions.innerHTML = `
                 <button
                     class="dr-button"
                     id="dr-tour-again"
@@ -425,18 +339,8 @@
                     Take the Tour
 
                 </button>
-
-                <a
-                    class="dr-button messenger-button"
-                    href="${facebookProfile}"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    💬 Chat with Roger
-
-                </a>
-
             `;
+
 
             navigation.classList.add("active");
 
@@ -448,10 +352,6 @@
         }
 
 
-        /* =================================================
-           NAVIGATION
-           ================================================= */
-
         document
             .querySelectorAll(".dr-nav-button")
             .forEach(function (button) {
@@ -461,12 +361,15 @@
                     const section =
                         this.getAttribute("data-section");
 
+
                     if (!sections[section]) {
                         return;
                     }
 
+
                     message.textContent =
                         sections[section].message;
+
 
                     scrollToSection(
                         sections[section].target
@@ -482,11 +385,6 @@
             let element =
                 document.getElementById(id);
 
-
-            /*
-             * If the exact ID doesn't exist,
-             * try a few common alternatives.
-             */
 
             if (!element) {
 
@@ -506,17 +404,20 @@
                     );
 
                 const search =
-                    id.toLowerCase()
-                       .replace("-", " ");
+                    id.toLowerCase().replace("-", " ");
+
 
                 headings.forEach(function (item) {
 
                     if (
                         item.id &&
-                        item.id.toLowerCase()
+                        item.id
+                            .toLowerCase()
                             .includes(search)
                     ) {
+
                         element = item;
+
                     }
 
                 });
@@ -537,8 +438,11 @@
 
 
             element.scrollIntoView({
+
                 behavior: "smooth",
+
                 block: "center"
+
             });
 
 
@@ -558,10 +462,6 @@
         }
 
 
-        /* =================================================
-           INITIAL BUTTONS
-           ================================================= */
-
         tourButton.addEventListener(
             "click",
             startTour
@@ -573,10 +473,6 @@
             enableFreeExplore
         );
 
-
-        /* =================================================
-           MINIMIZE
-           ================================================= */
 
         minimizeButton.addEventListener(
             "click",
@@ -596,10 +492,6 @@
         );
 
 
-        /* =================================================
-           CLOSE
-           ================================================= */
-
         closeButton.addEventListener(
             "click",
             function () {
@@ -616,10 +508,6 @@
             }
         );
 
-
-        /* =================================================
-           AVATAR INTERACTION
-           ================================================= */
 
         avatar.addEventListener(
             "click",
@@ -652,39 +540,39 @@
     }
 
 
-    /* =====================================================
-       LAUNCHER
-       ===================================================== */
-
     function createLauncher() {
 
         const launcher =
             document.createElement("button");
 
+
         launcher.id =
             "digital-roger-launcher";
 
+
         launcher.type = "button";
+
 
         launcher.setAttribute(
             "aria-label",
             "Show Digital Roger"
         );
 
+
         launcher.title =
             "Show Digital Roger";
 
 
         launcher.innerHTML = `
-
             <img
                 src="assets/digital-roger.png"
                 alt="">
-
         `;
 
 
-        document.body.appendChild(launcher);
+        document.body.appendChild(
+            launcher
+        );
 
 
         launcher.addEventListener(
@@ -695,6 +583,7 @@
                     document.getElementById(
                         "digital-roger-container"
                     );
+
 
                 if (!assistant) {
 
@@ -713,6 +602,7 @@
                     "dr-hidden"
                 );
 
+
                 launcher.classList.remove(
                     "active"
                 );
@@ -723,13 +613,10 @@
     }
 
 
-    /* =====================================================
-       LAUNCHER ONLY MODE
-       ===================================================== */
-
     function createLauncherOnly() {
 
         createLauncher();
+
 
         document
             .getElementById(
@@ -738,5 +625,6 @@
             .classList.add("active");
 
     }
+
 
 })();
