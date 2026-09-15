@@ -7,13 +7,10 @@
     right: 24px;
     bottom: 22px;
     z-index: 9999;
-
     display: flex;
     align-items: flex-end;
     gap: 14px;
-
     font-family: inherit;
-
     transition:
         opacity 0.35s ease,
         transform 0.35s ease;
@@ -25,20 +22,18 @@
     pointer-events: none;
 }
 
+
 /* =========================================================
-   ROBOT
+   AVATAR
    ========================================================= */
 
 .dr-avatar {
     width: 145px;
     height: 200px;
-
     display: flex;
     align-items: flex-end;
     justify-content: center;
-
     cursor: pointer;
-
     animation: drFloat 4s ease-in-out infinite;
 
     filter:
@@ -61,13 +56,17 @@
 .dr-avatar img {
     width: 100%;
     height: 100%;
-
     object-fit: contain;
-
     display: block;
 }
 
+
+/* =========================================================
+   FLOATING ANIMATION
+   ========================================================= */
+
 @keyframes drFloat {
+
     0%,
     100% {
         transform: translateY(0);
@@ -76,15 +75,16 @@
     50% {
         transform: translateY(-8px);
     }
+
 }
 
+
 /* =========================================================
-   SPEECH PANEL
+   PANEL
    ========================================================= */
 
 .dr-panel {
     width: 310px;
-
     padding: 17px 18px;
 
     background:
@@ -95,7 +95,6 @@
         );
 
     border: 1px solid rgba(96, 165, 250, 0.25);
-
     border-radius: 18px;
 
     box-shadow:
@@ -110,7 +109,9 @@
     animation: drPanelIn 0.45s ease both;
 }
 
+
 @keyframes drPanelIn {
+
     from {
         opacity: 0;
         transform: translateY(12px) scale(0.97);
@@ -120,26 +121,25 @@
         opacity: 1;
         transform: translateY(0) scale(1);
     }
+
 }
 
+
 /* =========================================================
-   HEADER
+   PANEL HEADER
    ========================================================= */
 
 .dr-panel-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     margin-bottom: 9px;
 }
 
 .dr-label {
     color: #60a5fa;
-
     font-size: 0.72rem;
     font-weight: 800;
-
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
@@ -148,6 +148,11 @@
     display: flex;
     gap: 5px;
 }
+
+
+/* =========================================================
+   CONTROL BUTTONS
+   ========================================================= */
 
 .dr-control {
     width: 27px;
@@ -177,10 +182,13 @@
 .dr-control:hover {
     color: #ffffff;
 
-    background: rgba(59, 130, 246, 0.12);
+    background:
+        rgba(59, 130, 246, 0.12);
 
-    border-color: rgba(96, 165, 250, 0.35);
+    border-color:
+        rgba(96, 165, 250, 0.35);
 }
+
 
 /* =========================================================
    MESSAGE
@@ -195,8 +203,9 @@
     line-height: 1.55;
 }
 
+
 /* =========================================================
-   BUTTONS
+   ACTION BUTTONS
    ========================================================= */
 
 .dr-actions {
@@ -211,11 +220,12 @@
     border: 1px solid rgba(96, 165, 250, 0.25);
     border-radius: 8px;
 
-    background: linear-gradient(
-        135deg,
-        #3b82f6,
-        #2563eb
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #3b82f6,
+            #2563eb
+        );
 
     color: #ffffff;
 
@@ -238,7 +248,8 @@
 }
 
 .dr-button.secondary {
-    background: rgba(255, 255, 255, 0.045);
+    background:
+        rgba(255, 255, 255, 0.045);
 
     color: #cbd5e1;
 
@@ -246,11 +257,13 @@
 }
 
 .dr-button.secondary:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background:
+        rgba(255, 255, 255, 0.08);
 }
 
+
 /* =========================================================
-   QUICK NAVIGATION
+   NAVIGATION
    ========================================================= */
 
 .dr-navigation {
@@ -259,7 +272,8 @@
     margin-top: 13px;
     padding-top: 13px;
 
-    border-top: 1px solid rgba(148, 163, 184, 0.12);
+    border-top:
+        1px solid rgba(148, 163, 184, 0.12);
 }
 
 .dr-navigation.active {
@@ -281,7 +295,8 @@
 .dr-navigation-grid {
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        repeat(2, 1fr);
 
     gap: 6px;
 }
@@ -289,10 +304,13 @@
 .dr-nav-button {
     padding: 7px 8px;
 
-    border: 1px solid rgba(96, 165, 250, 0.12);
+    border:
+        1px solid rgba(96, 165, 250, 0.12);
+
     border-radius: 7px;
 
-    background: rgba(59, 130, 246, 0.05);
+    background:
+        rgba(59, 130, 246, 0.05);
 
     color: #94a3b8;
 
@@ -307,15 +325,18 @@
 }
 
 .dr-nav-button:hover {
-    background: rgba(59, 130, 246, 0.12);
+    background:
+        rgba(59, 130, 246, 0.12);
 
     color: #60a5fa;
 
-    border-color: rgba(96, 165, 250, 0.28);
+    border-color:
+        rgba(96, 165, 250, 0.28);
 }
 
+
 /* =========================================================
-   MINIMIZED LAUNCHER
+   LAUNCHER
    ========================================================= */
 
 #digital-roger-launcher {
@@ -333,7 +354,9 @@
     align-items: center;
     justify-content: center;
 
-    border: 1px solid rgba(96, 165, 250, 0.45);
+    border:
+        1px solid rgba(96, 165, 250, 0.45);
+
     border-radius: 50%;
 
     background:
@@ -362,7 +385,6 @@
 #digital-roger-launcher.active {
     opacity: 1;
     pointer-events: auto;
-
     transform: scale(1);
 }
 
@@ -377,27 +399,38 @@
     object-fit: contain;
 }
 
+
 /* =========================================================
    SECTION HIGHLIGHT
    ========================================================= */
 
 .dr-section-highlight {
-    animation: drHighlight 1.5s ease;
+    animation:
+        drHighlight 1.5s ease;
 }
 
 @keyframes drHighlight {
+
     0% {
-        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+        box-shadow:
+            0 0 0 0
+            rgba(59, 130, 246, 0);
     }
 
     35% {
-        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0.10);
+        box-shadow:
+            0 0 0 10px
+            rgba(59, 130, 246, 0.10);
     }
 
     100% {
-        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+        box-shadow:
+            0 0 0 0
+            rgba(59, 130, 246, 0);
     }
+
 }
+
 
 /* =========================================================
    MOBILE
@@ -421,7 +454,11 @@
     }
 
     .dr-panel {
-        width: min(275px, calc(100vw - 105px));
+        width:
+            min(
+                275px,
+                calc(100vw - 105px)
+            );
 
         padding: 13px 14px;
 
@@ -449,7 +486,9 @@
         width: 34px;
         height: 34px;
     }
+
 }
+
 
 /* =========================================================
    REDUCED MOTION
@@ -467,15 +506,5 @@
         transition: none;
         animation: none;
     }
-}
-.messenger-button {
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-}
 
-.messenger-button:hover {
-    text-decoration: none;
 }
