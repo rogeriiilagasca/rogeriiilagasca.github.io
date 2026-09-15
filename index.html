@@ -1,86 +1,1487 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Roger S. Lagasca III | Executive Virtual Assistant</title>
-<meta name="description" content="Roger S. Lagasca III — Executive Virtual Assistant, Operations & CRM Specialist.">
-<style>
-:root{--blue:#174a7e;--blue2:#0f355b;--ink:#151a20;--muted:#66717d;--line:#dfe5ea;--soft:#f4f7fa;--white:#fff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
-a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:1080px;margin:auto;padding:0 28px}
-nav{position:sticky;top:0;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);z-index:10}
-.nav{height:68px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:700;letter-spacing:.02em}.brand span{color:var(--blue)}
-.navlinks{display:flex;gap:24px;font-size:14px}.navlinks a{color:var(--ink)}
-.hero{padding:92px 0 76px;background:linear-gradient(180deg,var(--soft),#fff)}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:var(--blue);font-weight:700}
-h1{font-size:52px;line-height:1.08;margin:14px 0 14px;max-width:800px}.lead{font-size:20px;max-width:760px;color:#39434d}.buttons{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}.btn{display:inline-block;padding:12px 19px;border:1px solid var(--blue);border-radius:7px;font-weight:700}.primary{background:var(--blue);color:#fff}.secondary{color:var(--blue);background:#fff}
-section{padding:76px 0;border-bottom:1px solid var(--line)}h2{font-size:30px;margin:0 0 10px}.section-intro{color:var(--muted);max-width:720px;margin:0 0 30px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{border:1px solid var(--line);border-radius:10px;padding:24px;background:#fff}.card h3{margin:0 0 8px;font-size:18px}.card p{margin:0;color:var(--muted);font-size:14px}
-.tags{display:flex;flex-wrap:wrap;gap:8px}.tag{background:var(--soft);border:1px solid var(--line);padding:7px 10px;border-radius:999px;font-size:13px}
-.samples{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.sample{padding:23px;border:1px solid var(--line);border-radius:10px;display:flex;flex-direction:column;min-height:170px}.sample h3{margin:0 0 7px}.sample p{color:var(--muted);font-size:14px;flex:1}.sample a{font-weight:700}
-.about{display:grid;grid-template-columns:1.2fr .8fr;gap:44px}.facts{background:var(--soft);border-radius:10px;padding:24px}.facts div{padding:11px 0;border-bottom:1px solid var(--line)}.facts div:last-child{border-bottom:0}.facts b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-footer{padding:42px 0;background:var(--blue2);color:#fff}.footergrid{display:flex;justify-content:space-between;gap:30px}.footergrid a{color:#fff}.note{font-size:12px;opacity:.75;margin-top:24px}
-@media(max-width:760px){h1{font-size:40px}.navlinks{display:none}.grid,.samples,.about{grid-template-columns:1fr}.hero{padding:65px 0}.footergrid{display:block}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Roger Lagasca III | Executive Virtual Assistant</title>
+
+  <meta name="description" content="Roger Lagasca III — Executive Virtual Assistant specializing in operations, CRM management, administrative support, customer success, and workflow organization.">
+
+  <style>
+    :root {
+      --blue: #1769e0;
+      --blue-dark: #0d47a1;
+      --blue-light: #eaf2ff;
+      --navy: #0f172a;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+      --white: #ffffff;
+      --shadow: 0 12px 35px rgba(15, 23, 42, 0.07);
+      --radius: 18px;
+      --max-width: 1120px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    }
+
+    nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--navy);
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .nav-cta {
+      padding: 10px 17px;
+      border-radius: 9px;
+      background: var(--navy);
+      color: white !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--blue);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(23, 105, 224, 0.10), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      padding: 105px 0 95px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--blue-light);
+      color: var(--blue-dark);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 5vw, 68px);
+      line-height: 1.05;
+      letter-spacing: -2.8px;
+      color: var(--navy);
+      max-width: 720px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero-subtitle {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 650px;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn.primary {
+      background: var(--blue);
+      color: white;
+      box-shadow: 0 8px 20px rgba(23, 105, 224, 0.22);
+    }
+
+    .btn.primary:hover {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn.secondary {
+      background: white;
+      color: var(--navy);
+      border-color: var(--border);
+    }
+
+    .btn.secondary:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    .hero-card {
+      position: relative;
+      background: var(--navy);
+      border-radius: 24px;
+      padding: 34px;
+      color: white;
+      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.17);
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(23, 105, 224, 0.3);
+      right: -80px;
+      top: -80px;
+    }
+
+    .hero-card-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: #93c5fd;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .hero-card h2 {
+      font-size: 28px;
+      line-height: 1.2;
+      letter-spacing: -0.7px;
+      margin-bottom: 25px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-stat {
+      padding: 17px 0;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+
+    .hero-stat span {
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    /* =========================
+       SECTION
+    ========================= */
+
+    section {
+      padding: 92px 0;
+    }
+
+    .section-header {
+      max-width: 690px;
+      margin-bottom: 42px;
+    }
+
+    .section-label {
+      color: var(--blue);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .section-header h2 {
+      color: var(--navy);
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 14px;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about {
+      background: var(--bg);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 16px;
+    }
+
+    .strength-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .strength-card h3 {
+      color: var(--navy);
+      font-size: 17px;
+      margin-bottom: 20px;
+    }
+
+    .strength-list {
+      list-style: none;
+    }
+
+    .strength-list li {
+      display: flex;
+      gap: 12px;
+      padding: 11px 0;
+      border-bottom: 1px solid #eef2f7;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .strength-list li:last-child {
+      border-bottom: none;
+    }
+
+    .check {
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 27px;
+      background: white;
+      transition: 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: #cbdcf8;
+    }
+
+    .service-number {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      color: var(--navy);
+      font-size: 17px;
+      margin-bottom: 9px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       WORK SAMPLES
+    ========================= */
+
+    .samples {
+      background: var(--bg);
+    }
+
+    .sample-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .sample-card {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      min-height: 245px;
+      transition: 0.25s ease;
+    }
+
+    .sample-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: #cbdcf8;
+    }
+
+    .sample-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 22px;
+    }
+
+    .sample-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--blue-light);
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 17px;
+    }
+
+    .sample-type {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 800;
+      padding-top: 8px;
+    }
+
+    .sample-card h3 {
+      font-size: 19px;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .sample-card p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .sample-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: auto;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      padding: 5px 9px;
+      background: #f1f5f9;
+      border-radius: 6px;
+      font-size: 11px;
+      color: #475569;
+      font-weight: 700;
+    }
+
+    .sample-link {
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .sample-link:hover {
+      color: var(--blue-dark);
+    }
+
+    .demo-note {
+      margin-top: 24px;
+      padding: 15px 18px;
+      background: #eef6ff;
+      border: 1px solid #d7e9ff;
+      border-radius: 10px;
+      color: #475569;
+      font-size: 13px;
+    }
+
+    /* =========================
+       TOOLS
+    ========================= */
+
+    .tools-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tool {
+      padding: 10px 15px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .tool:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      background: var(--blue-light);
+    }
+
+    /* =========================
+       EXPERIENCE
+    ========================= */
+
+    .experience {
+      background: var(--bg);
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 850px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background: #dbe6f5;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 38px;
+      margin-bottom: 34px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: white;
+      border: 4px solid var(--blue);
+    }
+
+    .timeline-item h3 {
+      color: var(--navy);
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+
+    .timeline-item .company {
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .contact {
+      padding: 90px 0 100px;
+    }
+
+    .contact-box {
+      position: relative;
+      overflow: hidden;
+      background: var(--navy);
+      border-radius: 25px;
+      padding: 60px;
+      text-align: center;
+      color: white;
+    }
+
+    .contact-box::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(23, 105, 224, 0.25);
+      top: -150px;
+      left: -100px;
+    }
+
+    .contact-box h2 {
+      position: relative;
+      z-index: 2;
+      font-size: clamp(30px, 4vw, 43px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 14px;
+    }
+
+    .contact-box p {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      margin: 0 auto 28px;
+      color: #cbd5e1;
+    }
+
+    .contact-box .btn {
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-email {
+      margin-top: 22px;
+      font-size: 13px;
+      color: #94a3b8;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      background: white;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-name {
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 45px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        padding: 80px 0;
+      }
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        min-height: 65px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .hero {
+        padding: 65px 0 70px;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+        letter-spacing: -2px;
+      }
+
+      .hero-subtitle {
+        font-size: 17px;
+      }
+
+      .hero-card {
+        padding: 27px;
+      }
+
+      .services-grid,
+      .sample-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box {
+        padding: 42px 25px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<nav><div class="wrap nav">
-  <div class="brand">Roger <span>Lagasca III</span></div>
-  <div class="navlinks"><a href="#about">About</a><a href="#services">Services</a><a href="#work">Work Samples</a><a href="#tools">Tools</a><a href="#contact">Contact</a></div>
-</div></nav>
 
-<header class="hero"><div class="wrap">
-  <div class="eyebrow">Executive Virtual Assistant • Operations • CRM</div>
-  <h1>Reliable support for the work behind the scenes.</h1>
-  <p class="lead">I help business owners and teams stay organized through executive administration, CRM management, data organization, reporting, client support, quality assurance, and process improvement.</p>
-  <div class="buttons"> <a class="btn primary" href="#work">View Work Samples</a> <a class="btn secondary" href="Roger_Lagasca_III_Resume.pdf" target="_blank">View Resume</a> <a class="btn secondary" href="#contact">Let's Connect</a> </div>
-</div></header>
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
 
-<section id="about"><div class="wrap about">
-  <div><div class="eyebrow">About Me</div><h2>Executive support with an operations mindset.</h2>
-  <p>I'm a results-driven Executive Virtual Assistant and Operations Specialist with nearly a decade of experience supporting customers, teams, and business operations for global brands including AT&T, Amazon, and DirecTV.</p>
-  <p>My strength is taking ownership of the work behind the scenes — keeping administrative tasks organized, maintaining CRM systems, managing data and reports, supporting clients, improving workflows, and helping day-to-day operations run smoothly.</p>
-  <p>I work independently, communicate professionally, handle time-sensitive work, and adapt quickly to new tools and processes.</p></div>
-  <div class="facts"><div><b>Focus</b>Executive VA • Operations • CRM</div><div><b>Availability</b>Full-time support</div><div><b>Experience</b>Nearly a decade across customer, technical, QA and operations roles</div><div><b>Location</b>Philippines</div></div>
-</div></section>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">Roger<span>.</span></a>
 
-<section id="services"><div class="wrap"><div class="eyebrow">What I Can Help With</div><h2>Practical support that keeps work moving.</h2><p class="section-intro">Designed around organization, ownership, accuracy, and dependable follow-through.</p>
-<div class="grid">
-<div class="card"><h3>Executive & Administrative Support</h3><p>Email and calendar support, task organization, data entry, documentation, coordination, and day-to-day administrative assistance.</p></div>
-<div class="card"><h3>CRM Management</h3><p>CRM maintenance, pipeline organization, follow-ups, data hygiene, workflow support, and structured records.</p></div>
-<div class="card"><h3>Operations & Reporting</h3><p>Trackers, KPI reporting, process organization, data checking, workflow improvement, and operational visibility.</p></div>
-<div class="card"><h3>Lead Generation</h3><p>Targeted prospect research, lead list building, data verification, and CRM-ready information organization.</p></div>
-<div class="card"><h3>Client & Customer Support</h3><p>Professional communication, troubleshooting, escalation handling, retention support, and customer lifecycle assistance.</p></div>
-<div class="card"><h3>Quality Assurance</h3><p>QA evaluation, compliance checks, scorecards, coaching support, and identification of recurring process issues.</p></div>
-</div></div></section>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Work Samples</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact" class="nav-cta">Let's Connect</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<section id="work"><div class="wrap"><div class="eyebrow">Selected Work Samples</div><h2>See how I approach the work.</h2><p class="section-intro">These are demonstration projects created to show workflow, organization, CRM, reporting, lead research, QA, and SOP skills. They use fictional data where applicable.</p>
-<div class="samples">
-<div class="sample"><h3>CRM Workflow & Pipeline</h3><p>Pipeline stages, follow-up logic, CRM hygiene checklist, and workflow structure.</p><a href="samples/01_CRM_Workflow_Sample.pdf" target="_blank">View sample →</a></div>
-<div class="sample"><h3>Executive Admin Support</h3><p>Priority tracker and practical system for inbox, follow-ups, deadlines, and recurring admin work.</p><a href="samples/02_Executive_Admin_Support_Sample.pdf" target="_blank">View sample →</a></div>
-<div class="sample"><h3>Google Sheets KPI Reporting</h3><p>KPI tracker and reporting framework demonstrating structured data and trend monitoring.</p><a href="samples/03_Google_Sheets_KPI_Sample.pdf" target="_blank">View sample →</a></div>
-<div class="sample"><h3>Lead Generation & Research</h3><p>Sample prospect table with verification, standardization, and quality-control workflow.</p><a href="samples/04_Lead_Generation_Sample.pdf" target="_blank">View sample →</a></div>
-<div class="sample"><h3>Quality Assurance & Operations</h3><p>QA scorecard, findings, action plan, and process-improvement thinking.</p><a href="samples/05_QA_Operations_Sample.pdf" target="_blank">View sample →</a></div>
-<div class="sample"><h3>SOP & Process Documentation</h3><p>Example standard operating procedure for consistent CRM follow-up management.</p><a href="samples/06_SOP_Process_Documentation_Sample.pdf" target="_blank">View sample →</a></div>
-</div></div></section>
 
-<section id="tools"><div class="wrap"><div class="eyebrow">Tools & Platforms</div><h2>Comfortable across business systems.</h2><p class="section-intro">Tools and platforms reflected in my professional background.</p>
-<div class="tags">
-<span class="tag">GoHighLevel</span><span class="tag">Zoho</span><span class="tag">Kartra</span><span class="tag">Salesforce</span><span class="tag">Google Workspace</span><span class="tag">Google Sheets</span><span class="tag">Microsoft Office</span><span class="tag">Canva</span>
-</div></div></section>
+  <!-- =========================
+       HERO
+  ========================= -->
 
-<section id="experience"><div class="wrap"><div class="eyebrow">Experience Highlights</div><h2>Background built around ownership and accuracy.</h2>
-<div class="grid">
-<div class="card"><h3>Operations & Administrative Specialist</h3><p>Remote freelance practice — backend workflows, CRM systems, advanced trackers, lead generation, reporting concepts, and digital asset support.</p></div>
-<div class="card"><h3>Quality Assurance Specialist</h3><p>Amazon / Sitel — QA evaluations, compliance audits, scorecards, coaching, and identifying service bottlenecks.</p></div>
-<div class="card"><h3>Customer Service & Assistant Team Leader</h3><p>AT&T / DirecTV — escalations, daily floor support, mentoring, performance monitoring, customer retention, and team coordination.</p></div>
-</div></div></section>
+  <main>
 
-<section id="contact"><div class="wrap"><div class="eyebrow">Contact</div><h2>Let's discuss how I can support your business.</h2><p class="section-intro">For Executive VA, Operations, CRM, administrative support, or client-success opportunities, feel free to reach out.</p>
-<div class="buttons"><a class="btn primary" href="mailto:regoracsagaliii@gmail.com">Email Me</a></div>
-<p style="margin-top:25px;color:var(--muted)">Roger S. Lagasca III<br>Puerto Princesa City, Palawan, Philippines</p>
-</div></section>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
 
-<footer><div class="wrap footergrid"><div><strong>Roger Lagasca III</strong><br>Executive Virtual Assistant | Operations & CRM Specialist</div><div><a href="#about">About</a> &nbsp; <a href="#work">Work</a> &nbsp; <a href="#contact">Contact</a></div></div>
-<div class="wrap note">Portfolio samples are demonstration projects and do not represent confidential client data.</div></footer>
-</body></html>
+          <div>
+            <div class="eyebrow">
+              Executive Virtual Assistant
+            </div>
+
+            <h1>
+              Reliable support for the
+              <span>work behind the scenes.</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              Executive Virtual Assistant specializing in operations,
+              CRM management, administrative support, customer success,
+              and organized business workflows.
+            </p>
+
+            <div class="buttons">
+              <a class="btn primary" href="#work">
+                View Work Samples
+              </a>
+
+              <a class="btn secondary"
+                 href="Roger_Lagasca_III_Resume.pdf"
+                 target="_blank">
+                View Resume
+              </a>
+
+              <a class="btn secondary" href="#contact">
+                Let's Connect
+              </a>
+            </div>
+          </div>
+
+
+          <div class="hero-card">
+
+            <div class="hero-card-label">
+              What I Bring
+            </div>
+
+            <h2>
+              Organized operations.
+              Reliable execution.
+            </h2>
+
+            <div class="hero-stat">
+              <strong>Executive & Administrative Support</strong>
+              <span>Keeping priorities, tasks, and information organized.</span>
+            </div>
+
+            <div class="hero-stat">
+              <strong>CRM & Operations</strong>
+              <span>Maintaining systems, workflows, data, and pipelines.</span>
+            </div>
+
+            <div class="hero-stat">
+              <strong>Client & Customer Support</strong>
+              <span>Professional communication, troubleshooting, and escalation handling.</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section class="about" id="about">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-label">About Me</div>
+          <h2>More than task completion.</h2>
+          <p>
+            I focus on making the work behind the business more organized,
+            efficient, and dependable.
+          </p>
+        </div>
+
+        <div class="about-grid">
+
+          <div class="about-text">
+
+            <p>
+              I’m a results-driven Executive Virtual Assistant and
+              Operations Specialist with nearly a decade of experience
+              supporting customers, teams, and business operations for
+              global brands including AT&T, Amazon, and DirecTV.
+            </p>
+
+            <p>
+              My strength is taking ownership of the work behind the scenes —
+              keeping administrative tasks organized, maintaining CRM systems,
+              managing data and reports, supporting clients, improving workflows,
+              and helping day-to-day operations run smoothly.
+            </p>
+
+            <p>
+              I’m comfortable working independently, handling sensitive or
+              time-critical tasks, communicating professionally with clients
+              and teams, and learning new tools and processes quickly.
+            </p>
+
+          </div>
+
+
+          <div class="strength-card">
+
+            <h3>Core Strengths</h3>
+
+            <ul class="strength-list">
+              <li>
+                <span class="check">✓</span>
+                Executive & Administrative Support
+              </li>
+
+              <li>
+                <span class="check">✓</span>
+                CRM Management & Maintenance
+              </li>
+
+              <li>
+                <span class="check">✓</span>
+                Data Organization & Reporting
+              </li>
+
+              <li>
+                <span class="check">✓</span>
+                Workflow & Process Support
+              </li>
+
+              <li>
+                <span class="check">✓</span>
+                Customer & Client Support
+              </li>
+
+              <li>
+                <span class="check">✓</span>
+                Quality Assurance
+              </li>
+
+              <li>
+                <span class="check">✓</span>
+                Team Coordination & Leadership
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================= -->
+
+    <section id="services">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-label">Services</div>
+
+          <h2>
+            Practical support that keeps
+            business moving.
+          </h2>
+
+          <p>
+            Flexible support across administration, CRM, operations,
+            customer experience, and business organization.
+          </p>
+        </div>
+
+
+        <div class="services-grid">
+
+          <div class="service-card">
+            <div class="service-number">01</div>
+            <h3>Executive & Administrative Support</h3>
+            <p>
+              Email and calendar support, data entry, documentation,
+              organization, research, and day-to-day administrative tasks.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">02</div>
+            <h3>CRM Management</h3>
+            <p>
+              CRM maintenance, data organization, pipeline management,
+              follow-ups, records, and workflow support.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">03</div>
+            <h3>Operations Support</h3>
+            <p>
+              Workflow coordination, trackers, process organization,
+              reporting, and backend operational support.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">04</div>
+            <h3>Customer & Client Support</h3>
+            <p>
+              Professional communication, troubleshooting, escalation
+              handling, follow-ups, and customer experience support.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">05</div>
+            <h3>Data & Reporting</h3>
+            <p>
+              Google Sheets trackers, structured data, performance
+              monitoring, reporting, and data checking.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">06</div>
+            <h3>Process & QA Support</h3>
+            <p>
+              SOP documentation, quality checking, workflow improvement,
+              compliance review, and process consistency.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         WORK SAMPLES
+    ========================= -->
+
+    <section class="samples" id="work">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-label">Selected Work</div>
+
+          <h2>
+            Work samples & demonstrations.
+          </h2>
+
+          <p>
+            A selection of demonstration projects showing how I approach
+            CRM, administration, reporting, lead generation, QA, and SOP work.
+          </p>
+        </div>
+
+
+        <div class="sample-grid">
+
+          <!-- SAMPLE 01 -->
+
+          <div class="sample-card">
+
+            <div class="sample-top">
+              <div class="sample-icon">01</div>
+              <div class="sample-type">CRM</div>
+            </div>
+
+            <h3>CRM Workflow & Pipeline</h3>
+
+            <p>
+              Demonstration of organized CRM stages, lead movement,
+              follow-up structure, and workflow organization.
+            </p>
+
+            <div class="sample-tags">
+              <span class="tag">CRM</span>
+              <span class="tag">Pipeline</span>
+              <span class="tag">Workflow</span>
+            </div>
+
+            <a class="sample-link"
+               href="samples/01_CRM_Workflow_Sample.pdf"
+               target="_blank">
+              View Sample →
+            </a>
+
+          </div>
+
+
+          <!-- SAMPLE 02 -->
+
+          <div class="sample-card">
+
+            <div class="sample-top">
+              <div class="sample-icon">02</div>
+              <div class="sample-type">ADMIN</div>
+            </div>
+
+            <h3>Executive Admin Support</h3>
+
+            <p>
+              Demonstration of organized administrative support,
+              task coordination, communication, and executive assistance.
+            </p>
+
+            <div class="sample-tags">
+              <span class="tag">Admin</span>
+              <span class="tag">Executive Support</span>
+              <span class="tag">Organization</span>
+            </div>
+
+            <a class="sample-link"
+               href="samples/02_Executive_Admin_Support_Sample.pdf"
+               target="_blank">
+              View Sample →
+            </a>
+
+          </div>
+
+
+          <!-- SAMPLE 03 -->
+
+          <div class="sample-card">
+
+            <div class="sample-top">
+              <div class="sample-icon">03</div>
+              <div class="sample-type">REPORTING</div>
+            </div>
+
+            <h3>Google Sheets KPI Dashboard</h3>
+
+            <p>
+              Demonstration of structured trackers, KPI monitoring,
+              formulas, performance metrics, and visual reporting.
+            </p>
+
+            <div class="sample-tags">
+              <span class="tag">Google Sheets</span>
+              <span class="tag">KPI</span>
+              <span class="tag">Reporting</span>
+            </div>
+
+            <a class="sample-link"
+               href="samples/03_Google_Sheets_KPI_Sample.pdf"
+               target="_blank">
+              View Sample →
+            </a>
+
+          </div>
+
+
+          <!-- SAMPLE 04 -->
+
+          <div class="sample-card">
+
+            <div class="sample-top">
+              <div class="sample-icon">04</div>
+              <div class="sample-type">LEAD GEN</div>
+            </div>
+
+            <h3>Lead Generation & Research</h3>
+
+            <p>
+              Demonstration of targeted prospect research,
+              lead organization, and verified contact datasets.
+            </p>
+
+            <div class="sample-tags">
+              <span class="tag">Lead Generation</span>
+              <span class="tag">Research</span>
+              <span class="tag">Data</span>
+            </div>
+
+            <a class="sample-link"
+               href="samples/04_Lead_Generation_Sample.pdf"
+               target="_blank">
+              View Sample →
+            </a>
+
+          </div>
+
+
+          <!-- SAMPLE 05 -->
+
+          <div class="sample-card">
+
+            <div class="sample-top">
+              <div class="sample-icon">05</div>
+              <div class="sample-type">QUALITY</div>
+            </div>
+
+            <h3>QA & Operations</h3>
+
+            <p>
+              Demonstration of quality evaluation, scorecards,
+              compliance checking, coaching, and operational review.
+            </p>
+
+            <div class="sample-tags">
+              <span class="tag">QA</span>
+              <span class="tag">Operations</span>
+              <span class="tag">Scorecards</span>
+            </div>
+
+            <a class="sample-link"
+               href="samples/05_QA_Operations_Sample.pdf"
+               target="_blank">
+              View Sample →
+            </a>
+
+          </div>
+
+
+          <!-- SAMPLE 06 -->
+
+          <div class="sample-card">
+
+            <div class="sample-top">
+              <div class="sample-icon">06</div>
+              <div class="sample-type">SOP</div>
+            </div>
+
+            <h3>SOP & Process Documentation</h3>
+
+            <p>
+              Demonstration of clear process documentation designed
+              to improve consistency, efficiency, and team execution.
+            </p>
+
+            <div class="sample-tags">
+              <span class="tag">SOP</span>
+              <span class="tag">Process</span>
+              <span class="tag">Documentation</span>
+            </div>
+
+            <a class="sample-link"
+               href="samples/06_SOP_Process_Documentation_Sample.pdf"
+               target="_blank">
+              View Sample →
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="demo-note">
+          <strong>Note:</strong>
+          These portfolio pieces are demonstration projects created to
+          showcase my approach and capabilities. They use fictional data
+          and do not contain confidential client information.
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         TOOLS
+    ========================= -->
+
+    <section id="tools">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-label">Tools & Platforms</div>
+
+          <h2>
+            Comfortable across the tools
+            businesses already use.
+          </h2>
+
+          <p>
+            Experienced with CRM platforms, productivity tools,
+            spreadsheets, communication systems, and digital content tools.
+          </p>
+        </div>
+
+
+        <div class="tools-wrapper">
+
+          <div class="tool">GoHighLevel</div>
+          <div class="tool">Zoho</div>
+          <div class="tool">Kartra</div>
+          <div class="tool">Salesforce</div>
+          <div class="tool">Google Workspace</div>
+          <div class="tool">Google Sheets</div>
+          <div class="tool">Microsoft Office</div>
+          <div class="tool">Canva</div>
+          <div class="tool">CRM Management</div>
+          <div class="tool">Data Organization</div>
+          <div class="tool">Workflow Support</div>
+          <div class="tool">Quality Assurance</div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         EXPERIENCE
+    ========================= -->
+
+    <section class="experience" id="experience">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-label">Experience</div>
+
+          <h2>
+            Nearly a decade of customer,
+            technical, and operational experience.
+          </h2>
+
+          <p>
+            Experience supporting global brands, customers, teams,
+            and business operations across multiple roles.
+          </p>
+        </div>
+
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+
+            <h3>Independent Operations & Administrative Specialist</h3>
+
+            <div class="company">
+              Freelance Practice · Remote · July 2021–Present
+            </div>
+
+            <p>
+              Backend workflows, CRM systems, Google Sheets trackers,
+              lead generation, reporting, data organization, and digital
+              asset creation.
+            </p>
+          </div>
+
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+
+            <h3>Call Monitoring & Quality Assurance Specialist</h3>
+
+            <div class="company">
+              Sitel · Amazon · Aug 2020–Jul 2021
+            </div>
+
+            <p>
+              QA evaluations, compliance audits, coaching, scorecards,
+              service-quality monitoring, and identification of operational
+              bottlenecks.
+            </p>
+          </div>
+
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+
+            <h3>Customer Service Representative & Assistant Team Leader</h3>
+
+            <div class="company">
+              iQor · AT&T / DirecTV · Apr 2018–Jul 2020
+            </div>
+
+            <p>
+              Customer support, escalations, SME responsibilities,
+              team assistance, performance monitoring, mentoring,
+              retention, and daily floor operations.
+            </p>
+          </div>
+
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+
+            <h3>Technical Support Specialist</h3>
+
+            <div class="company">
+              Ibex · AT&T Mobility / Apple · Jun 2017–Apr 2018
+            </div>
+
+            <p>
+              Technical troubleshooting, customer support,
+              issue resolution, and escalation handling.
+            </p>
+          </div>
+
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+
+            <h3>Escalations Desk & Billing Specialist</h3>
+
+            <div class="company">
+              Sitel · DirecTV · Dec 2016–Jun 2017
+            </div>
+
+            <p>
+              Critical escalations, billing concerns, retention,
+              negotiation, customer resolution, and upselling.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section class="contact" id="contact">
+
+      <div class="container">
+
+        <div class="contact-box">
+
+          <h2>
+            Let's make your operations
+            more organized.
+          </h2>
+
+          <p>
+            If you need dependable support for administration, CRM,
+            customer experience, reporting, or day-to-day operations,
+            I'd be happy to discuss how I can help.
+          </p>
+
+          <a class="btn primary"
+             href="mailto:regoracsagaliii@gmail.com">
+            Email Me
+          </a>
+
+          <div class="contact-email">
+            regoracsagaliii@gmail.com
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-inner">
+
+        <p>
+          <span class="footer-name">Roger Lagasca III</span>
+          · Executive Virtual Assistant | Operations & CRM
+        </p>
+
+        <p>
+          © 2026 All rights reserved.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
